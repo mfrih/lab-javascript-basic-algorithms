@@ -40,3 +40,18 @@ console.log(separatedHacker1Name);
 
 const reversedName = hacker1.split("").reverse().join("");
 console.log(reversedName);
+
+//3.3 : lexicographic order
+
+const hacker1LowerCase = hacker1.toLowerCase();
+const hacker2LowerCase = hacker2.toLowerCase();
+console.log(hacker1LowerCase);
+console.log(hacker2LowerCase);
+
+if (hacker1LowerCase < hacker2LowerCase) {
+  console.log(`${hacker1} goes first`);
+} else if (hacker1LowerCase > hacker2LowerCase) {
+  console.log(`Yo, ${hacker2} goes first, definitely.`);
+} else {
+  console.log(`What?! You both have the same name?`);
+}
