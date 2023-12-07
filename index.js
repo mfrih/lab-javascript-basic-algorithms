@@ -36,10 +36,46 @@ const upperCasedHacker1 = hacker1.toUpperCase();
 const separatedHacker1Name = upperCasedHacker1.split("").join(" ");
 console.log(separatedHacker1Name);
 
+// // 3.1 doing it the loop way (+ a condition)
+
+// let spacedUpperName = "";
+
+// for (let i = 0; i < hacker1.length; i++) {
+//   const letter = hacker1[i].toUpperCase();
+
+//   if (i < hacker1.length - 1) {
+//     spacedUpperName += letter + " ";
+//   } else {
+//     spacedUpperName += letter;
+//   }
+// }
+
+// // 3.1 doing it the loop way (+ trim)
+
+// let spacedUpperName = "";
+
+// for (let i = 0; i < hacker1.length; i++) {
+//   const letter = hacker1[i].toUpperCase();
+//   spacedUpperName += letter + " ";
+// }
+
+// spacedUpperName = spacedUpperName.trim();
+// console.log(spacedUpperName);
+
 // 3.2 : backwards (reverse ;-))
 
-const reversedName = hacker1.split("").reverse().join("");
+let reversedName = hacker1.split("").reverse().join("");
 console.log(reversedName);
+
+// 3.2 doing it the loop way
+
+// let reversedName = "";
+// for (let i = hacker1.length - 1; i >= 0; i--) {
+//     const letter = hacker1[i];
+//     reversedName += letter;
+// }
+
+// console.log(reversedName);
 
 //3.3 : lexicographic order
 
@@ -55,3 +91,34 @@ if (hacker1LowerCase < hacker2LowerCase) {
 } else {
   console.log(`What?! You both have the same name?`);
 }
+
+// 3.3 Other way of comparing strings
+
+// console.log(hacker1.localeCompare(hacker2, undefined, { sensitivity: "base" }));
+
+// 3.3 doing it the loopy way
+
+// 3.3.1 first we're going to look for the shortest name to loop around
+// let's try and do this condition using a ternary operator : let shortestName = condition ? true : false
+
+let shortestName = hacker1.length > hacker2.length ? hacker2 : hacker1;
+let sameName = true;
+
+// 3.3.2 then we run the loop
+
+// for (let i = 0; i < shortestName.length; i++) {
+//   if (hacker1[i].toLowerCase() < hacker2[i].toLocaleLowerCase()) {
+//     console.log(`${hacker1} goes first`);
+//     sameName = false;
+//     break;
+//   }
+//   if (hacker2[i].toLowerCase() < hacker1[i].toLocaleLowerCase()) {
+//     console.log(`${hacker2} goes first`);
+//     sameName = false;
+//     break;
+//   }
+// }
+
+// if (sameName) {
+//   console.log("They have the same name");
+// }
